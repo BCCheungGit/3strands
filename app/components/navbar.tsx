@@ -9,6 +9,7 @@ export default function NavBar() {
       <a
         className={`font-bold fustat hover:cursor-pointer ${active === "home" ? "underline" : ""}`}
         onClick={() => setActive("home")}
+        href="/"
       >
         HOME
       </a>
@@ -16,6 +17,7 @@ export default function NavBar() {
         <a
           className={`font-bold fustat hover:cursor-pointer ${active === "about" ? "underline" : ""}`}
           onClick={() => setActive("about")}
+          href="#about"
         >
           ABOUT US
         </a>
