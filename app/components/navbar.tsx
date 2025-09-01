@@ -15,7 +15,7 @@ export default function NavBar() {
           <Link
             href={tab.href}
             onClick={() => setCurrentTab(tab.name)}
-            className={`${currentTab === tab.name ? "underline" : ""} font-bold fustat hover:cursor-pointer`}
+            className={`${currentTab === tab.name ? "underline" : ""} font-bold fustat text-2xl hover:cursor-pointer`}
           >
             {tab.name.toUpperCase()}
           </Link>

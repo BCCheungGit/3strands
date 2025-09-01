@@ -9,8 +9,8 @@ export function WhoCard() {
           <BlurFade key={index} delay={0.5} inView>
             <div className="flex sm:flex-row flex-col items-center justify-center shadow-md rounded-lg p-10 gap-10 max-w-4xl">
               <div className="flex flex-col items-center justify-center gap-4">
-                <h2>{card.title}</h2>
-                <p>{card.description}</p>
+                <h2 className="font-bold fustat text-4xl">{card.title}</h2>
+                <p className="text-xl fustat">{card.description}</p>
               </div>
               {card.image && (
                 <Image src={card.image} alt="" width={300} height={300} />
