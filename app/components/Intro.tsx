@@ -25,7 +25,7 @@ export default function Intro() {
         </div>
 
         <BoxReveal duration={0.8} boxColor="#030689">
-          <p className="fustat sm:text-2xl text-xl max-w-lg text-center sm:text-left">
+          <p className="fustat sm:text-2xl text-xl max-w-lg sm:text-left">
             We believe that strong connections come from that common foundation
             of faith. Skip the apps, and searching in the wrong places. Come to
             a Three Strands speed dating event and meet new friends!
