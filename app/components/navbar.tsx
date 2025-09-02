@@ -9,7 +9,7 @@ export default function NavBar() {
     { name: "about", href: "/about" },
   ];
   return (
-    <nav className="flex flex-row justify-between p-4 px-10 border-b-1 border-slate-500 items-center bg-background mt-14 ">
+    <nav className="flex flex-row justify-between p-4 sm:px-10 px-2 border-b-1 border-slate-500 items-center bg-background mt-8 sm:mt-14 ">
       {tabs.map((tab) => (
         <li key={tab.name} className="list-none">
           <Link
