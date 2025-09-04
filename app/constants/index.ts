@@ -9,7 +9,7 @@ export const aboutCards = [
     title: "WHAT IS 3STRANDS",
     description:
       "The meaning of Three Strands is inspired by Ecclesiastes 4:12 , where “…cord of three strands is not quickly broken” We believe that strong connections come from that common foundation of faith. Skip the apps, and searching in the wrong places. Come to a Three Strands speed dating event and meet new friends!",
-    image: "/logo.png",
+    image: "/squareposter.png",
   },
   {
     title: "HOW DOES THIS WORK",
