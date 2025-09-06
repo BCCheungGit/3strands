@@ -54,11 +54,9 @@ export function PosterCarousel() {
       id="upcoming"
       className="flex flex-col lg:mt-0 mt-10 lg:gap-0 gap-8 items-center"
     >
-      <BoxReveal duration={0.8} boxColor="#030689">
-        <h1 className="mt-6 font-bold fustat text-3xl md:text-6xl">
-          Upcoming Events
-        </h1>
-      </BoxReveal>
+      <h1 className="mt-6 font-bold fustat text-3xl md:text-6xl">
+        Upcoming Events
+      </h1>
       <Carousel
         plugins={[plugin.current]}
         className="md:w-3xl w-2xs mx-auto max-w-6xl"
