@@ -5,7 +5,7 @@ export function BottomBar() {
   return (
     <nav className="w-full py-20 mt-10 flex items-center justify-center bottom-0 z-20 border-t-1">
       <div className="w-full gap-10 flex px-20 justify-between items-center">
-        <div className="flex fustat flex-row items-center justify-center gap-1 text-[12px]">
+        <div className="flex fustat flex-row text-nowrap items-center justify-center gap-1 text-[12px]">
           <Copyright size={16} />
           3Strands. 2025
         </div>
