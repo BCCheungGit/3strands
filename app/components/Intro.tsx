@@ -33,7 +33,7 @@ export function Intro() {
               friends!
             </p>
           </BoxReveal>
-          <Button className="hover:cursor-pointer p-5">
+          <Button className="hover:cursor-pointer sm:flex hidden p-5">
             <a href="#upcoming" className="fustat text-md">
               Upcoming Events
             </a>
