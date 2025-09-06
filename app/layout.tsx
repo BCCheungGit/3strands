@@ -14,7 +14,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "3strands",
+  title: "Three Strands",
   description: "Because a cord of three strands is not easily broken.",
 };
 

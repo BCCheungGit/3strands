@@ -54,7 +54,7 @@ export function PosterCarousel() {
       id="upcoming"
       className="flex flex-col lg:mt-0 mt-10 lg:gap-0 gap-8 items-center"
     >
-      <h1 className="mt-6 font-bold fustat text-3xl md:text-6xl">
+      <h1 className="mt-6 font-bold fustat text-3xl md:text-5xl">
         Upcoming Events
       </h1>
       <Carousel
@@ -87,7 +87,7 @@ export function PosterCarousel() {
           target="_blank"
           className="fustat text-lg"
         >
-          Register Here!{" "}
+          Register Here{" "}
         </a>
       </Button>
     </section>
