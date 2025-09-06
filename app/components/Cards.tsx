@@ -12,6 +12,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 import { BoxReveal } from "@/components/magicui/box-reveal";
+import { Button } from "@/components/ui/button";
 
 export function WhoCard() {
   return (
@@ -51,7 +52,7 @@ export function PosterCarousel() {
   return (
     <section
       id="upcoming"
-      className="flex flex-col gap-4 sm:gap-10 items-center"
+      className="flex flex-col lg:mt-0 mt-10 lg:gap-0 gap-8 items-center"
     >
       <BoxReveal duration={0.8} boxColor="#030689">
         <h1 className="mt-6 font-bold fustat text-3xl md:text-6xl">
@@ -60,14 +61,14 @@ export function PosterCarousel() {
       </BoxReveal>
       <Carousel
         plugins={[plugin.current]}
-        className="sm:w-3xl w-2xs mx-auto max-w-6xl"
+        className="md:w-3xl w-2xs mx-auto max-w-6xl"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
         <CarouselContent>
           {posters.map((poster, index) => (
             <CarouselItem key={index}>
-              <div className="relative w-full h-96 sm:h-[800px]">
+              <div className="relative w-full h-96 md:h-[670px]">
                 <Image
                   src={poster.image}
                   alt={poster.alt}
@@ -81,6 +82,16 @@ export function PosterCarousel() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+      <Button className="hover:cursor-pointer p-5 mt-5">
+        {" "}
+        <a
+          href="https://luma.com/96we248h"
+          target="_blank"
+          className="fustat text-lg"
+        >
+          Register Here!{" "}
+        </a>
+      </Button>
     </section>
   );
 }
