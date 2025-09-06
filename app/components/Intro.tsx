@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export function Intro() {
   return (
-    <div className="flex flex-col mb-10">
+    <div className="flex flex-col sm:mb-10">
       <section className="h-fit py-8 flex flex-col items-center px-2 sm:px-20 gap-6">
         <div className="flex items-center justify-center gap-10">
           <BoxReveal duration={0.8} boxColor="#030689">
-            <div className="text-4xl sm:text-6xl md:text-8xl font-bold fustat text-center">
+            <div className="text-4xl sm:text-6xl md:text-8xl font-bold fustat text-center text-nowrap">
               Three Strands
             </div>
           </BoxReveal>

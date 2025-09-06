@@ -28,7 +28,9 @@ export function WhoCard() {
               <h2 className="font-bold fustat text-2xl sm:text-4xl">
                 {card.title}
               </h2>
-              <p className="text-lg sm:text-xl fustat">{card.description}</p>
+              <p className="text-lg sm:text-xl text-center fustat">
+                {card.description}
+              </p>
             </div>
 
             {card.image && (
