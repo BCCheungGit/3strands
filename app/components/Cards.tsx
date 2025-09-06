@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
+import { BoxReveal } from "@/components/magicui/box-reveal";
 
 export function WhoCard() {
   return (
@@ -48,13 +49,18 @@ export function WhoCard() {
 export function PosterCarousel() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   return (
-    <section id="upcoming" className="flex flex-col gap-10 text-center">
-      <h1 className="mt-6 font-bold fustat text-3xl md:text-6xl">
-        Upcoming Events
-      </h1>
+    <section
+      id="upcoming"
+      className="flex flex-col gap-4 sm:gap-10 items-center"
+    >
+      <BoxReveal duration={0.8} boxColor="#030689">
+        <h1 className="mt-6 font-bold fustat text-3xl md:text-6xl">
+          Upcoming Events
+        </h1>
+      </BoxReveal>
       <Carousel
         plugins={[plugin.current]}
-        className="sm:w-3xl w-xs mx-auto max-w-6xl"
+        className="sm:w-3xl w-2xs mx-auto max-w-6xl"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >

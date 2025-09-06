@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 export function Intro() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col sm:min-h-screen">
       <section className="h-fit py-8 flex flex-col md:flex-row justify-between items-center px-2 sm:px-20 gap-6">
         <div className="flex flex-col gap-6 sm:items-start items-center sm:mt-0 mt-10">
           <div className="flex items-center gap-4 md:hidden">
