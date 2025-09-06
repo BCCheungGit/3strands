@@ -7,7 +7,7 @@ export function Intro() {
       <section className="h-fit py-8 flex flex-col items-center px-2 sm:px-20 gap-6">
         <div className="flex items-center justify-center sm:gap-10 gap-4">
           <BoxReveal duration={0.8} boxColor="#030689">
-            <div className="text-3xl sm:text-6xl md:text-8xl font-bold fustat text-center text-nowrap">
+            <div className="text-3xl sm:text-6xl md:text-9xl font-bold fustat text-center text-nowrap">
               Three Strands
             </div>
           </BoxReveal>
@@ -17,7 +17,7 @@ export function Intro() {
         </div>
 
         <BoxReveal duration={0.8} boxColor="#030689">
-          <p className="fustat text-center sm:text-2xl text-lg max-w-2xl">
+          <p className="fustat text-center sm:text-2xl text-lg md:max-w-6xl max-w-2xl">
             We believe that strong connections come from that common foundation
             of faith. Skip the apps, and searching in the wrong places. Come to
             a Three Strands speed dating event and meet new friends!
