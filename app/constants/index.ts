@@ -21,3 +21,14 @@ export const aboutCards = [
     image: "/squareposter.jpg",
   },
 ];
+
+export const posters = [
+  {
+    image: "/brewedfortwo.png",
+    alt: "brewed for two poster",
+  },
+  {
+    image: "/whatisthis.png",
+    alt: "what is this? poster",
+  },
+];
