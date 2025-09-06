@@ -1,18 +1,17 @@
 import { BoxReveal } from "@/components/magicui/box-reveal";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 
 export function Intro() {
   return (
     <div className="flex flex-col mb-10">
       <section className="h-fit py-8 flex flex-col items-center px-2 sm:px-20 gap-6">
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-10">
           <BoxReveal duration={0.8} boxColor="#030689">
             <div className="text-4xl sm:text-6xl md:text-8xl font-bold fustat text-center">
               Three Strands
             </div>
           </BoxReveal>
-          <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32">
+          <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-40 md:h-40">
             <Image src="/logo.png" alt="logo for 3strands" fill />
           </div>
         </div>
