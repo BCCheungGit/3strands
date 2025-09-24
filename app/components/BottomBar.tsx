@@ -15,14 +15,9 @@ export function BottomBar() {
           <a
             href="https://www.instagram.com/threestrandsclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
+            className="fustat"
           >
-            <Image
-              src="/instagram.png"
-              alt="instagram logo"
-              height={50}
-              width={50}
-              className="sm:w-8 sm:h-8 w-4 h-4 cursor-pointer hover:opacity-70"
-            />
+            Instagram
           </a>
         </div>
         <Button
