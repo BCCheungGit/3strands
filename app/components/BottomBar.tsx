@@ -11,15 +11,22 @@ export function BottomBar() {
           3Strands. 2025
         </div>
         <div className="flex text-nowrap flex-row items-center justify-center gap-2 fustat">
-          <p>Find us on</p>
           <a
             href="https://www.instagram.com/threestrandsclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
-            className="fustat"
+            className="fustat flex flex-row gap-2"
           >
-            Instagram
+            <p>Find us on</p>
+
+            <Image
+              src="/instagram.png"
+              alt="Instagram"
+              height={20}
+              width={20}
+            />
           </a>
         </div>
+        {/*
         <Button
           variant="link"
           className="fustat"
@@ -27,6 +34,7 @@ export function BottomBar() {
         >
           Back to Top
         </Button>
+         */}
       </div>
     </nav>
   );
