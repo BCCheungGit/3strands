@@ -12,21 +12,16 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Spinner } from "@/components/ui/spinner";
 
 function ImageWithLoader(props: ImageProps) {
   const [loading, setLoading] = useState(true);
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center">
       {loading && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-[shimmer_2s_infinite]" />
-          <style jsx>{`
-            @keyframes shimmer {
-              100% {
-                transform: translateX(100%);
-              }
-            }
-          `}</style>
+          <Spinner className="size-8" />
         </>
       )}
       <Image
