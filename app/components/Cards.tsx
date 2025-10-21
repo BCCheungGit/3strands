@@ -1,6 +1,6 @@
 "use client";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { aboutCards, posters } from "@/app/constants";
 import {
   Carousel,
@@ -10,9 +10,35 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
-import { BoxReveal } from "@/components/magicui/box-reveal";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+
+function ImageWithLoader(props: ImageProps) {
+  const [loading, setLoading] = useState(true);
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      {loading && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-[shimmer_2s_infinite]" />
+          <style jsx>{`
+            @keyframes shimmer {
+              100% {
+                transform: translateX(100%);
+              }
+            }
+          `}</style>
+        </>
+      )}
+      <Image
+        {...props}
+        onLoad={() => setLoading(false)}
+        className={`${props.className ?? ""} ${
+          loading ? "opacity-0" : "opacity-100 transition-opacity duration-500"
+        }`}
+      />
+    </div>
+  );
+}
 
 export function WhoCard() {
   return (
@@ -34,7 +60,7 @@ export function WhoCard() {
             </div>
 
             {card.image && (
-              <Image
+              <ImageWithLoader
                 src={card.image}
                 alt={card.title}
                 width={400}
