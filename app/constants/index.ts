@@ -4,7 +4,7 @@ export const aboutCards = [
     title: "WHO WE ARE",
     description:
       "We’re Elane & Janice, two friends living in nyc who want to create a space for singles to meet outside their local communities! The foundation? Faith.",
-    image: "/who.jpg",
+    image: "/JaniceElane.JPG",
   },
   {
     index: "c1",
@@ -17,7 +17,7 @@ export const aboutCards = [
     index: "c2",
     title: "HOW DOES THIS WORK",
     description:
-      " Depending on the event, we’ll send out a survey beforehand to best pair you with people we think you should meet. You’ll be seated in a table of 2 or more and rotate accordingly. There will also be opportunities to mingle before/after the event is over!",
+      "We’ll send out a survey beforehand to best pair you with people we think you should meet. You’ll be seated in tables of 4 and rotate accordingly. There will also be opportunities to mingle with other people before and after the event is over. If speed dating is not for you, we have other social cafe events - follow us on Instagram to be in the loop! ",
     image: "/pic2.JPG",
   },
 ];

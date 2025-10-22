@@ -70,6 +70,19 @@ export function WhoCard() {
   );
 }
 
+export function PosterCard() {
+  return (
+    <div className="flex w-full justify-center items-center">
+      <Image
+        src="/brewedtwoND.png"
+        alt="brewed for two event poster"
+        width={500}
+        height={700}
+      />
+    </div>
+  );
+}
+
 export function PosterCarousel() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   return (

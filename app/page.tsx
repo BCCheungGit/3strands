@@ -2,6 +2,7 @@ import { BottomBar } from "./components/BottomBar";
 // import { PosterCarousel } from "./components/Cards";
 import { Intro } from "./components/Intro";
 import NavBar from "./components/Navbar";
+import { PosterCard } from "./components/Cards";
 export default function Home() {
   return (
     <>
@@ -9,6 +10,7 @@ export default function Home() {
         <NavBar />
         <Intro />
         {/*   <PosterCarousel />  */}
+        <PosterCard />
       </div>
       <BottomBar />
     </>
