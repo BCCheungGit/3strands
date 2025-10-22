@@ -74,7 +74,7 @@ export function PosterCard() {
   return (
     <div className="flex w-full justify-center items-center">
       <Image
-        src="/brewedtwoND.png"
+        src="/brewedtwoND.PNG"
         alt="brewed for two event poster"
         width={500}
         height={700}
