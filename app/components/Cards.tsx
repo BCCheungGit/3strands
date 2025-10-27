@@ -53,7 +53,6 @@ export function WhoCard() {
                 {card.description}
               </p>
             </div>
-
             {card.image && (
               <ImageWithLoader
                 src={card.image}

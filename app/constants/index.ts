@@ -1,3 +1,5 @@
+import { image } from "motion/react-client";
+
 export const aboutCards = [
   {
     index: "c0",
@@ -17,8 +19,15 @@ export const aboutCards = [
     index: "c2",
     title: "HOW DOES THIS WORK",
     description:
-      "We’ll send out a survey beforehand to best pair you with people we think you should meet. You’ll be seated in tables of 4 and rotate accordingly. There will also be opportunities to mingle with other people before and after the event is over. If speed dating is not for you, we have other social cafe events - follow us on Instagram to be in the loop! ",
+      "We’ll send out a survey beforehand to best pair you with people we think you should meet. You’ll be seated in tables of 4 and rotate accordingly. There will also be opportunities to mingle with other people before and after the event is over.  ",
     image: "/pic2.JPG",
+  },
+  {
+    index: "c3",
+    title: "",
+    description:
+      "If speed dating is not for you, we have other social cafe events - follow us on Instagram to be in the loop!",
+    image: "",
   },
 ];
 
