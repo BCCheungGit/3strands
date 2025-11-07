@@ -14,7 +14,7 @@ export function BottomBar() {
           <a
             href="https://www.instagram.com/threestrandsclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
-            className="fustat flex flex-row gap-2"
+            className="fustat flex flex-row gap-2 items-center justify-center"
           >
             <p>Find us on</p>
 
@@ -23,18 +23,10 @@ export function BottomBar() {
               alt="Instagram"
               height={20}
               width={20}
+              className="h-[20px] w-[20px]"
             />
           </a>
         </div>
-        {/*
-        <Button
-          variant="link"
-          className="fustat"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          Back to Top
-        </Button>
-         */}
       </div>
     </nav>
   );
