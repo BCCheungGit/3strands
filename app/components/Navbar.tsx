@@ -1,15 +1,27 @@
 "use client";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 import { useNavStore } from "../stores/useNavStore";
 
-export default function NavBar() {
+type NavBarProps = {
+  variant?: "default" | "light";
+};
+
+export default function NavBar({ variant = "default" }: NavBarProps) {
   const { currentTab, setCurrentTab } = useNavStore();
   const tabs = [
     { name: "home", href: "/" },
     { name: "about", href: "/about" },
   ];
   return (
-    <nav className="flex flex-row justify-between p-4 sm:px-10 px-2 border-b-1 border-slate-500 items-center bg-background mt-8 sm:mt-14 ">
+    <nav
+      className={cn(
+        "flex flex-row justify-between p-4 sm:px-10 px-2 border-b-1 items-center mt-8 sm:mt-14",
+        variant === "light"
+          ? "border-white text-white"
+          : "border-slate-500 bg-background",
+      )}
+    >
       {tabs.map((tab) => (
         <li key={tab.name} className="list-none">
           <Link

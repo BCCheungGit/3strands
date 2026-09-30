@@ -2,6 +2,7 @@
 import { BlurFade } from "@/components/magicui/blur-fade";
 import Image, { ImageProps } from "next/image";
 import { aboutCards, posters } from "@/app/constants";
+import { cn } from "@/lib/utils";
 import {
   Carousel,
   CarouselContent,
@@ -37,34 +38,71 @@ function ImageWithLoader(props: ImageProps) {
 
 export function WhoCard() {
   return (
-    <div className="flex flex-col items-center justify-center gap-10 w-full mt-10">
-      {aboutCards.map((card, index) => (
-        <BlurFade key={card.index ?? index} delay={0.5}>
-          <div
-            className={`flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 max-w-6xl ${
-              index % 2 !== 0 ? "md:flex-row-reverse" : ""
-            }`}
+    <div className="flex flex-col w-full">
+      {aboutCards.map((card, index) => {
+        const imageOnLeft = index % 2 === 0;
+        return (
+          <section
+            key={card.index}
+            className="flex min-h-[85svh] items-center justify-center overflow-x-clip py-8"
           >
-            <div className="flex flex-col justify-center items-center gap-4 text-center md:text-left">
-              <h2 className="font-bold fustat text-2xl sm:text-4xl">
-                {card.title}
-              </h2>
-              <p className="text-lg sm:text-xl text-center fustat">
-                {card.description}
-              </p>
+            <div
+              className={cn(
+                "flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-7xl",
+                !imageOnLeft && "md:flex-row-reverse",
+              )}
+            >
+              <BlurFade
+                inView
+                inViewMargin="-100px"
+                direction={imageOnLeft ? "right" : "left"}
+                offset={40}
+                duration={0.6}
+                className={cn(
+                  "w-full shrink-0",
+                  card.orientation === "landscape" ? "max-w-2xl" : "max-w-md",
+                )}
+              >
+                <div
+                  className={cn(
+                    "relative w-full overflow-hidden rounded-2xl",
+                    card.orientation === "landscape"
+                      ? "aspect-[1545/1024]"
+                      : "aspect-[4/5]",
+                  )}
+                >
+                  <ImageWithLoader
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes={
+                      card.orientation === "landscape"
+                        ? "(min-width: 768px) 672px, 100vw"
+                        : "(min-width: 768px) 448px, 100vw"
+                    }
+                    className="object-cover"
+                  />
+                </div>
+              </BlurFade>
+              <BlurFade
+                inView
+                inViewMargin="-100px"
+                direction={imageOnLeft ? "left" : "right"}
+                offset={40}
+                duration={0.6}
+                delay={0.15}
+              >
+                <div className="flex flex-col justify-center gap-4 text-center md:text-left">
+                  <h2 className="font-serif font-bold text-3xl sm:text-5xl">
+                    {card.title}
+                  </h2>
+                  <p className="fustat text-xl sm:text-2xl">{card.description}</p>
+                </div>
+              </BlurFade>
             </div>
-            {card.image && (
-              <ImageWithLoader
-                src={card.image}
-                alt={card.title}
-                width={400}
-                height={400}
-                className="md:w-[400px] md:h-[500px] w-[400px] h-[400px] object-contain"
-              />
-            )}
-          </div>
-        </BlurFade>
-      ))}
+          </section>
+        );
+      })}
     </div>
   );
 }

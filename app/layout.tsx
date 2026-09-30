@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Fustat, Dancing_Script } from "next/font/google";
+import {
+  Fustat,
+  Dancing_Script,
+  Merriweather,
+  Pinyon_Script,
+} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -11,6 +16,17 @@ const fustat = Fustat({
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: "--font-dancing-script",
+});
+
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  variable: "--font-merriweather",
+});
+
+const pinyonScript = Pinyon_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pinyon-script",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${fustat.variable} ${dancingScript.variable} antialiased`}
+        className={`${fustat.variable} ${dancingScript.variable} ${merriweather.variable} ${pinyonScript.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
