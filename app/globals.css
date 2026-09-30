@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme static {
+  --color-brand-blue: #0956f4;
+  --color-brand-navy: #040683;
+  --color-brand-cream: #f3efe7;
+  --color-brand-offwhite: #f5f6f6;
+  --color-brand-yellow: #f6ea92;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -55,7 +63,7 @@
 
 :root {
   --radius: 0.65rem;
-  --background: oklch(0.979 0.0123 91.52);
+  --background: var(--color-brand-cream);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
