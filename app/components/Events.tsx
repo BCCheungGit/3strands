@@ -16,7 +16,7 @@ const eventStagger = 0.15;
 
 export function Events() {
   return (
-    <section className="fustat flex min-h-svh justify-center px-6 pt-20 pb-20 sm:pt-24">
+    <section className="fustat flex justify-center px-6 pt-20 pb-24 sm:pt-24">
       <div className="flex w-full max-w-5xl flex-col gap-24">
         <BlurFade {...fadeIn}>
           <p className="text-center text-xl leading-snug sm:text-2xl md:text-3xl">
