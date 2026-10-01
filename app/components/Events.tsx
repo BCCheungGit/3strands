@@ -8,11 +8,11 @@ const fadeIn = {
   inViewMargin: "-100px",
   direction: "up",
   offset: 24,
-  duration: 0.6,
+  duration: 0.4,
 } as const;
 
-const eventsStartDelay = 0.45;
-const eventStagger = 0.3;
+const eventsStartDelay = 0.25;
+const eventStagger = 0.15;
 
 export function Events() {
   return (
@@ -26,7 +26,7 @@ export function Events() {
           </p>
         </BlurFade>
         <div className="flex flex-col gap-5">
-          <BlurFade {...fadeIn} delay={0.15}>
+          <BlurFade {...fadeIn} delay={0.1}>
             <h2 className="font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
               Our Events:
             </h2>
