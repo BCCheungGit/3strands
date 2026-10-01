@@ -5,7 +5,18 @@ import { subscribe, type SubscribeState } from "../actions/subscribe";
 
 const initialState: SubscribeState = { status: "idle", message: "" };
 
-const viewport = { once: false, margin: "-100px" } as const;
+const sectionVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+} as const;
+
+const underlineVariants = {
+  hidden: { scaleX: 0 },
+  visible: {
+    scaleX: 1,
+    transition: { duration: 0.8, delay: 0.3, ease: "easeInOut" },
+  },
+} as const;
 
 export function EmailSignup() {
   const [state, formAction, pending] = useActionState(subscribe, initialState);
@@ -16,10 +27,10 @@ export function EmailSignup() {
       className="fustat flex justify-center px-6 pb-24"
     >
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={viewport}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-100px" }}
         className="w-full max-w-5xl"
       >
         <div className="w-fit max-w-full">
@@ -49,10 +60,7 @@ export function EmailSignup() {
               />
               <motion.span
                 aria-hidden="true"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={viewport}
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeInOut" }}
+                variants={underlineVariants}
                 className="absolute inset-x-0 bottom-0 h-px origin-left bg-black transition-[height,background-color] peer-focus:h-0.5 peer-focus:bg-brand-blue"
               />
             </div>
