@@ -25,6 +25,7 @@ interface BlurFadeProps extends MotionProps {
   direction?: "up" | "down" | "left" | "right";
   inView?: boolean;
   inViewMargin?: MarginType;
+  once?: boolean;
   blur?: string;
 }
 
@@ -38,11 +39,12 @@ export function BlurFade({
   direction = "down",
   inView = false,
   inViewMargin = "-50px",
+  once = true,
   blur = "6px",
   ...props
 }: BlurFadeProps) {
   const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
+  const inViewResult = useInView(ref, { once, margin: inViewMargin });
   const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
     hidden: {
