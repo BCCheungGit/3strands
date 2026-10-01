@@ -1,7 +1,6 @@
 "use client";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import Image, { ImageProps } from "next/image";
-import { motion } from "motion/react";
 import { aboutCards, posters } from "@/app/constants";
 import { cn } from "@/lib/utils";
 import {
@@ -37,9 +36,6 @@ function ImageWithLoader(props: ImageProps) {
   );
 }
 
-const undeveloped = "grayscale(1) sepia(0.35) brightness(1.25) contrast(0.75)";
-const developed = "grayscale(0) sepia(0) brightness(1) contrast(1)";
-
 export function WhoCard() {
   return (
     <div className="flex flex-col w-full">
@@ -67,17 +63,13 @@ export function WhoCard() {
                   card.orientation === "landscape" ? "max-w-2xl" : "max-w-md",
                 )}
               >
-                <motion.div
+                <div
                   className={cn(
                     "relative w-full overflow-hidden rounded-2xl",
                     card.orientation === "landscape"
                       ? "aspect-[1545/1024]"
                       : "aspect-[4/5]",
                   )}
-                  initial={{ filter: undeveloped }}
-                  whileInView={{ filter: developed }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 2.2, delay: 0.3, ease: "easeOut" }}
                 >
                   <ImageWithLoader
                     src={card.image}
@@ -90,7 +82,7 @@ export function WhoCard() {
                     }
                     className="object-cover"
                   />
-                </motion.div>
+                </div>
               </BlurFade>
               <BlurFade
                 inView
