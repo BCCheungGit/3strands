@@ -59,8 +59,10 @@ export function WhoCard() {
                 offset={72}
                 duration={0.6}
                 className={cn(
-                  "w-full shrink-0",
-                  card.orientation === "landscape" ? "max-w-2xl" : "max-w-md",
+                  "shrink-0",
+                  card.orientation === "landscape"
+                    ? "w-[min(100%,105svh)] max-w-2xl"
+                    : "w-[min(100%,56svh)] max-w-md",
                 )}
               >
                 <div
