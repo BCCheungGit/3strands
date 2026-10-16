@@ -22,7 +22,7 @@ export function Events() {
           <p className="text-center text-xl leading-snug sm:text-2xl md:text-3xl">
             We believe that strong connections come from that common foundation
             of faith. Skip searching in the wrong places. Come to a Three
-            Strands dating event and meet new friends!
+            Strands singles event and meet new friends!
           </p>
         </BlurFade>
         <div className="flex flex-col gap-5">
