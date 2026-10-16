@@ -8,6 +8,16 @@ export type SubscribeState = {
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_EMAIL_LENGTH = 254;
 
+const SUCCESS: SubscribeState = {
+  status: "success",
+  message: "Thanks! You're on the list.",
+};
+
+const FAILURE: SubscribeState = {
+  status: "error",
+  message: "Something went wrong. Please try again later.",
+};
+
 function isValidEmail(email: string) {
   return email.length <= MAX_EMAIL_LENGTH && EMAIL_PATTERN.test(email);
 }
@@ -17,7 +27,7 @@ export async function subscribe(
   formData: FormData,
 ): Promise<SubscribeState> {
   if (formData.get("company")) {
-    return { status: "success", message: "Thanks! You're on the list." };
+    return SUCCESS;
   }
 
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
@@ -25,9 +35,32 @@ export async function subscribe(
     return { status: "error", message: "Please enter a valid email address." };
   }
 
-  // TODO: send `email` to the email list provider once one is chosen.
-  return {
-    status: "error",
-    message: "Sign-ups aren't open yet. Please check back soon.",
-  };
+  const webhookUrl = process.env.SHEETS_WEBHOOK_URL;
+  const webhookSecret = process.env.SHEETS_WEBHOOK_SECRET;
+  if (!webhookUrl || !webhookSecret) {
+    return {
+      status: "error",
+      message: "Sign-ups aren't open yet. Please check back soon.",
+    };
+  }
+
+  try {
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, secret: webhookSecret }),
+      cache: "no-store",
+      signal: AbortSignal.timeout(10_000),
+    });
+    const body = await response.text();
+    if (!response.ok || body !== "ok") {
+      console.error(`Email list webhook failed with status ${response.status}`);
+      return FAILURE;
+    }
+  } catch {
+    console.error("Email list webhook request failed");
+    return FAILURE;
+  }
+
+  return SUCCESS;
 }
